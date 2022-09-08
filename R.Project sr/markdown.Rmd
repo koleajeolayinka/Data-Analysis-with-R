@@ -1,0 +1,75 @@
+---
+title: "Untitled"
+output: html_document
+date: "2022-09-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+auto <- read.table("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/test.txt", header=FALSE)
+head(auto[,2:3])
+```
+
+```{r}
+potato <- read.delim("~/rstudio-2022.07.1+554/bin/potatoes.txt",sep="\t", header=F,
+                     col.names = c("M","Y","Z","A","B", "T", "U", "P", "yy"))
+head(potato[,7:9])
+
+```
+
+```{r}
+host <- "courses.csrrinzqubik.us-east-1.rds.amazonaws.com"
+connect <- dbConnect(RMySQL::MySQL(), dbname="tweater",
+host=host, port=3306, user="student", password="datacamp")
+table <- dbListTables(connect)
+##[1]"comments" "tweets" "users"
+```
+
+```{r}
+host="car-simulation-station.c9az8e0qjbgo.us-east-1.rds.amazonaws.com"
+Name of 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
